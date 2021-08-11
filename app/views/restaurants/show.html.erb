@@ -2,9 +2,7 @@
 <p><%= @restaurant.address %> | <%= @restaurant.phone_number %></p>
 <p>Category: <%= @restaurant.category.capitalize %></p>
 
-<%= link_to 'Back to list', restaurants_path %>
-<br>
-<div type="button" class="btn btn-outline-primary"><%= link_to 'Add a review!', new_restaurant_review_path(@restaurant) %></div>
+<div><%= link_to 'Add a review!', new_restaurant_review_path(@restaurant), class: "btn btn-outline-primary"%></div>
 <hr>
 <% @restaurant.reviews.each do |review| %>
 <p>Rating: <%= review.rating %>/5</p>
