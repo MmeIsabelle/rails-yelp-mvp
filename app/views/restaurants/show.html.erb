@@ -3,3 +3,11 @@
 <p>Category: <%= @restaurant.category.capitalize %></p>
 
 <%= link_to 'Back to list', restaurants_path %>
+<br>
+<div type="button" class="btn btn-outline-primary"><%= link_to 'Add a review!', new_restaurant_review_path(@restaurant) %></div>
+<hr>
+<% @restaurant.reviews.each do |review| %>
+<p>Rating: <%= review.rating %>/5</p>
+<p><%= review.content %></p>
+<hr>
+<% end %>
